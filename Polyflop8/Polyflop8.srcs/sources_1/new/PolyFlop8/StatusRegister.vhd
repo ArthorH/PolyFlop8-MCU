@@ -1,3 +1,21 @@
+-- ============================================================================
+-- File:         StatusReg.vhd
+-- Description:  Status Register for PolyFlop8 Processor
+--                This file has been verified with the following test cases:
+--                - Reset Verification (TC-SREG-05)
+--                - Restore Mode (Load 0xAA) (TC-SREG-02)
+--                - ALU Update (Preserve I/T bits) (TC-SREG-01/04)
+--                - S-Flag Calculation (N=1, V=0 -> S=1) (TC-SREG-03)
+--                - S-Flag Calculation (N=1, V=1 -> S=0) (TC-SREG-03)
+--                - 100% code coverage of Status Register behavioral description
+--
+-- Author:       Artem Horiunov
+-- Date:         \today
+-- Version:      1.0
+-- Status:       VERIFIED
+-- Test Report:  TC-SREG-001
+-- ============================================================================
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

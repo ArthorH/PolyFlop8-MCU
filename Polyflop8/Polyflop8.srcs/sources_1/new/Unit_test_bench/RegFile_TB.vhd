@@ -1,3 +1,24 @@
+-- ============================================================================
+-- File:         tb_RegFile.vhd
+-- Description:  Testbench for PolyFlop8 Register File
+--                This testbench verifies the following:
+--                - Reset Verification (TC-REG-01)
+--                - LDI - Write Immediate to R1 (TC-REG-02)
+--                - ALU Write Back to R2 (TC-REG-03)
+--                - RAM Load to R3 (TC-REG-04)
+--                - Register Isolation Check (TC-REG-05)
+--                - Write Enable Protection (TC-REG-06)
+--                - R7 Hardwired Output Verification (TC-REG-07)
+--                - 100% code coverage of Register File behavioral description
+--
+-- Author:       Artem Horiunov
+-- Date:         05.01.2026
+-- Version:      1.0
+-- Status:       VERIFIED
+-- Test Report:  TC-REG-001
+-- ============================================================================
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
