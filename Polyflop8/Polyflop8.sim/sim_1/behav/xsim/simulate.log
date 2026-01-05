@@ -1,0 +1,43 @@
+Time resolution is 1 ps
+Note: Starting Instruction Decoder Test Bench
+Time: 0 ps  Iteration: 0  Process: /decoder_tb/stim_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 63488 | Opcode: 31 | RD: 0 | RS_IMM: 0 | Jump: 0
+Time: 11 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 0 | Opcode: 0 | RD: 0 | RS_IMM: 0 | Jump: 0
+Time: 21 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 16384 | Opcode: 8 | RD: 0 | RS_IMM: 0 | Jump: 0
+Time: 31 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 36095 | Opcode: 17 | RD: 4 | RS_IMM: 255 | Jump: 1279
+Time: 41 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 2047 | Opcode: 0 | RD: 7 | RS_IMM: 255 | Jump: 2047
+Time: 51 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 2048 | Opcode: 1 | RD: 0 | RS_IMM: 0 | Jump: 0
+Time: 61 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 1792 | Opcode: 0 | RD: 7 | RS_IMM: 0 | Jump: 1792
+Time: 71 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 0 | Opcode: 0 | RD: 0 | RS_IMM: 0 | Jump: 0
+Time: 81 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 1280 | Opcode: 0 | RD: 5 | RS_IMM: 0 | Jump: 1280
+Time: 91 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 255 | Opcode: 0 | RD: 0 | RS_IMM: 255 | Jump: 255
+Time: 101 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 85 | Opcode: 0 | RD: 0 | RS_IMM: 85 | Jump: 85
+Time: 111 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 128 | Opcode: 0 | RD: 0 | RS_IMM: 128 | Jump: 128
+Time: 121 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 256 | Opcode: 0 | RD: 1 | RS_IMM: 0 | Jump: 256
+Time: 131 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 2047 | Opcode: 0 | RD: 7 | RS_IMM: 255 | Jump: 2047
+Time: 141 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 682 | Opcode: 0 | RD: 2 | RS_IMM: 170 | Jump: 682
+Time: 151 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 1023 | Opcode: 0 | RD: 3 | RS_IMM: 255 | Jump: 1023
+Time: 161 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 320 | Opcode: 0 | RD: 1 | RS_IMM: 64 | Jump: 320
+Time: 171 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 33791 | Opcode: 16 | RD: 3 | RS_IMM: 255 | Jump: 1023
+Time: 181 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: Input: 53247 | Opcode: 25 | RD: 7 | RS_IMM: 255 | Jump: 2047
+Time: 191 ns  Iteration: 0  Process: /decoder_tb/monitor_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd
+Note: All Instruction Decoder test cases completed successfully!
+Time: 200 ns  Iteration: 0  Process: /decoder_tb/stim_proc  File: F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd

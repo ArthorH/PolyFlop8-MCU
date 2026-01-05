@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/PolyFlop8/Decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Decoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Projects/PolyFlop8-MCU/Polyflop8/Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'decoder_tb'

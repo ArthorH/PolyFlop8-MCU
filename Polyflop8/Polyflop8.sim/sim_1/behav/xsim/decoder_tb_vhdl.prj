@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Polyflop8.srcs/sources_1/new/PolyFlop8/Decoder.vhd" \
+"../../../../Polyflop8.srcs/sources_1/new/Unit_test_bench/Decoder_TB.vhd" \
+
+# Do not sort compile order
+nosort
