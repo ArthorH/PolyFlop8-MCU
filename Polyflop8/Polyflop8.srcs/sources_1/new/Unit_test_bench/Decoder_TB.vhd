@@ -1,3 +1,21 @@
+-- ============================================================================
+-- File:         Decoder.vhd
+-- Description:  Instruction Decoder for PolyFlop8 Processor
+--                This file has been verified with the following test cases:
+--                - Opcode Field Extraction (TC-DEC-001-01)
+--                - Destination Register (RD) Field Extraction (TC-DEC-001-02)
+--                - RS/IMM Field Extraction (TC-DEC-001-03)
+--                - Jump11bit Field Extraction (TC-DEC-001-04)
+--                - Comprehensive Instruction Tests (TC-DEC-001-05)
+--                - 100% code coverage of Decoder behavioral description
+--
+-- Author:       Artem Horiunov
+-- Date:         \today
+-- Version:      1.0
+-- Status:       VERIFIED
+-- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\Decoder_Test_Report.pdf
+-- ============================================================================
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;

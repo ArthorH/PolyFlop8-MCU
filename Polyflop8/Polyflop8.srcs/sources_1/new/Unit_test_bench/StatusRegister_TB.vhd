@@ -13,7 +13,7 @@
 -- Date:         \today
 -- Version:      1.0
 -- Status:       VERIFIED
--- Test Report:  TC-SREG-001
+-- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-SREG-001
 -- ============================================================================
 
 library IEEE;

@@ -15,7 +15,7 @@
 -- Date:         \today
 -- Version:      1.0
 -- Status:       VERIFIED
--- Test Report:  TC-PC-001
+-- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-PC-001
 -- ============================================================================
 
 library IEEE;

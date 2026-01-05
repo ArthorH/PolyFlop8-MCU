@@ -12,7 +12,7 @@
 -- Date:         05.01.2026
 -- Version:      1.0
 -- Status:       VERIFIED
--- Test Report:  TC-ALU-001
+-- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-ALU-001
 -- ============================================================================
 
 library IEEE;
