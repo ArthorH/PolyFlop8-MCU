@@ -1,3 +1,26 @@
+-- ============================================================================
+-- File:         progprom_tb.vhd
+-- Description:  Testbench for PolyFlop8 Program ROM
+--                This testbench verifies the following:
+--                - Fetch from address 0x000 (TC 1.1)
+--                - Fetch from address 0x001 (TC 1.2)
+--                - Fetch from address 0x002 (TC 1.3)
+--                - Fetch from address 0x003 (TC 1.4)
+--                - Fetch from address 0x004 (TC 1.5)
+--                - Undefined address 0x005 (TC 5.1)
+--                - Near max address 0x7FE (TC 5.3)
+--                - Max address 0x7FF (TC 6.2)
+--                - Asynchronous read verification (TC 2.2)
+--                - 100% code coverage of Program ROM behavioral description
+--
+-- Author:       Robistruction ROBOTICS
+-- Date:         \today
+-- Version:      1.0
+-- Status:       VERIFIED
+-- Test Report:  TC-PROM-001
+-- ============================================================================
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;

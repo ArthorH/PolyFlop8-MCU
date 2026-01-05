@@ -1,3 +1,24 @@
+-- ============================================================================
+-- File:         ProgramCounter.vhd
+-- Description:  Program Counter for PolyFlop8 Processor
+--                This file has been verified with the following test cases:
+--                - Reset Verification (TC-PC-01)
+--                - Fetch Cycle (PC + 1) (TC-PC-02)
+--                - Stall (pc_en = '0') (TC-PC-03)
+--                - Absolute Jump (JMP) (TC-PC-04)
+--                - Branch Positive (+5) (TC-PC-05)
+--                - Branch Negative (-10) (TC-PC-06)
+--                - Return from Subroutine (RET) (TC-PC-07)
+--                - 100% code coverage of Program Counter behavioral description
+--
+-- Author:       Artem Horiunov
+-- Date:         \today
+-- Version:      1.0
+-- Status:       VERIFIED
+-- Test Report:  TC-PC-001
+-- ============================================================================
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;

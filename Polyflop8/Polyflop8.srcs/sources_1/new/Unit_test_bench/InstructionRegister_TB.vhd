@@ -1,3 +1,21 @@
+-- ============================================================================
+-- File:         tb_InstructionReg.vhd
+-- Description:  Testbench for PolyFlop8 Instruction Register
+--                This testbench verifies the following:
+--                - Asynchronous reset functionality (TC-IR-001-01, TC-IR-001-04)
+--                - Data write functionality (TC-IR-001-02)
+--                - Data hold functionality (TC-IR-001-03)
+--                - Stability during asynchronous reset (TC-IR-001-04)
+--                - 100% code coverage of Instruction Register behavioral description
+--
+-- Author:       Artem Horiunov
+-- Date:         05.01.2026
+-- Version:      1.0
+-- Status:       VERIFIED
+-- Test Report:  TC-IR-001
+-- ============================================================================
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;

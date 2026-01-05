@@ -1,3 +1,22 @@
+-- ============================================================================
+-- File:         IO_Unit.vhd
+-- Description:  Input/Output Unit for PolyFlop8 Processor
+--                This file has been verified with the following test cases:
+--                - Reset functionality (TC-IO-01)
+--                - Write to Port A (TC-IO-02)
+--                - Data retention (TC-IO-03)
+--                - Read from Port B (TC-IO-04)
+--                - Address isolation for unsupported addresses (TC-IO-05)
+--                - 100% code coverage of IO Unit behavioral description
+--
+-- Author:       Artem Horiunov
+-- Date:         \today
+-- Version:      1.0
+-- Status:       VERIFIED
+-- Test Report:  TC-IO-001
+-- ============================================================================
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;

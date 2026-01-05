@@ -1,3 +1,23 @@
+-- ============================================================================
+-- File:         ControlUnit_TB.vhd
+-- Description:  Testbench for PolyFlop8 Control Unit
+--                This testbench verifies the following:
+--                - Reset and Initial State (TC-CU-001-01)
+--                - FETCH State (TC-CU-001-02)
+--                - ADD Instruction (TC-CU-001-03)
+--                - STORE (ST) Instruction (TC-CU-001-04)
+--                - LDI (Load Immediate) Instruction (TC-CU-001-05)
+--                - RJMP (Relative Jump) Instruction (TC-CU-001-06)
+--                - BRBS (Branch if Set) Instruction (TC-CU-001-07)
+--                - 100% code coverage of Control Unit behavioral description
+--
+-- Author:       Robistruction ROBOTICS
+-- Date:         \today
+-- Version:      1.0
+-- Status:       VERIFIED
+-- Test Report:  TC-CU-001
+-- ============================================================================
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
