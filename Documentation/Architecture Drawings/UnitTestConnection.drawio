@@ -1,0 +1,40 @@
+<mxfile host="Electron" modified="2026-01-06T09:53:42.450Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.5.3 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="2ofCmlUBx-EBJoRPqjNr" version="24.5.3" type="device">
+  <diagram name="Page-1" id="uVkiNMYP-Zv9eeq7PssB">
+    <mxGraphModel dx="1154" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Vav73YTNORsy-BY7UtQC-1" value="ALU" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCCE6;" vertex="1" parent="1">
+          <mxGeometry x="370" y="350" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-2" value="CU" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
+          <mxGeometry x="370" y="420" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-3" value="DEC" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFFF;" vertex="1" parent="1">
+          <mxGeometry x="370" y="490" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-4" value="IO" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EA6B66;" vertex="1" parent="1">
+          <mxGeometry x="480" y="350" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-5" value="IR" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="480" y="420" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-6" value="PC" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="480" y="490" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-7" value="PROM" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#7EA6E0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="350" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-8" value="RAM" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9AC7BF;" vertex="1" parent="1">
+          <mxGeometry x="590" y="420" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-9" value="REG" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E5CCFF;" vertex="1" parent="1">
+          <mxGeometry x="590" y="490" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vav73YTNORsy-BY7UtQC-10" value="SREG" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="480" y="560" width="80" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
