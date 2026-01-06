@@ -17,7 +17,7 @@
 --
 -- Author:       Artem Horiunov
 -- Date:         06.01.2026
--- Version:      1.4
+-- Version:      1.1
 -- Status:       VERIFIED
 -- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-REG-001.pdf
 -- ============================================================================
