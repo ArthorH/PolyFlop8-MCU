@@ -14,8 +14,8 @@
 -- Author:       Artem Horiunov
 -- Date:         \today
 -- Version:      1.1
--- Status:       UNVERIFIED
--- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-CU-001
+-- Status:       VERIFIED
+-- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-CU-002
 -- ============================================================================
 
 
