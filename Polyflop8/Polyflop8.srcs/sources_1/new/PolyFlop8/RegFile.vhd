@@ -2,21 +2,26 @@
 -- File:         RegFile.vhd
 -- Description:  Register File for PolyFlop8 Processor
 --                This file has been verified with the following test cases:
---                - Reset Verification (TC-REG-01)
+--                - Reset Verification (TC-REG-01, TC 1.8)
 --                - LDI - Write Immediate to R1 (TC-REG-02)
 --                - ALU Write Back to R2 (TC-REG-03)
 --                - RAM Load to R3 (TC-REG-04)
 --                - Register Isolation Check (TC-REG-05)
---                - Write Enable Protection (TC-REG-06)
---                - R7 Hardwired Output Verification (TC-REG-07)
+--                - Write Enable Protection (TC-REG-06, TC 2.5)
+--                - R7 Hardwired Output Verification (TC-REG-07, TC 3.1-3.7)
+--                - Write Mux Source Selection (TC-REG-04, TC 4.1-4.6)
+--                - Asynchronous Read Timing (<1ns) (TR-REG-01, TC 1.1)
+--                - Port B Slicing (Bits 7:5) (TC 1.9-1.10)
+--                - Integration Scenarios (TC 6.0)
 --                - 100% code coverage of Register File behavioral description
 --
 -- Author:       Artem Horiunov
--- Date:         06.01.2026 
--- Version:      1.1  
--- Status:       UNVERIFIED
--- Test Report:  TBD
+-- Date:         06.01.2026
+-- Version:      1.4
+-- Status:       VERIFIED
+-- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-REG-001.pdf
 -- ============================================================================
+
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
