@@ -12,12 +12,11 @@
 --                - 100% code coverage of Register File behavioral description
 --
 -- Author:       Artem Horiunov
--- Date:         05.01.2026
--- Version:      1.0
--- Status:       VERIFIED
--- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-REG-001
+-- Date:         06.01.2026 
+-- Version:      1.1  
+-- Status:       UNVERIFIED
+-- Test Report:  TBD
 -- ============================================================================
-
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -25,17 +24,20 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity RegFile is
     Port (
-        clk       : in  STD_LOGIC;                      -- Zegar systemowy
-        reset     : in  STD_LOGIC;                      -- Reset asynchroniczny
-        we        : in  STD_LOGIC;                      -- Write Enable (ze sterownika)
+        clk        : in  STD_LOGIC;                      -- Zegar systemowy
+        reset      : in  STD_LOGIC;                      -- Reset asynchroniczny
+        we         : in  STD_LOGIC;                      -- Write Enable (ze sterownika)
         
-        -- ADRESY (3-bitowe dla 8 rejestrów)
-        addr_a    : in  STD_LOGIC_VECTOR (2 downto 0); -- Adres odczytu A (Rs)
-        addr_b    : in  STD_LOGIC_VECTOR (2 downto 0); -- Adres odczytu B (Rd - jako źródło)
-        addr_w    : in  STD_LOGIC_VECTOR (2 downto 0); -- Adres zapisu (Rd - jako cel)
+        -- ADRESY
+        addr_a     : in  STD_LOGIC_VECTOR (2 downto 0); -- Adres odczytu A (Rs)
+        
+        -- ZMIANA ARCHITEKTONICZNA: addr_b przyjmuje teraz całą 8-bitową szynę RS_IMM
+        addr_b     : in  STD_LOGIC_VECTOR (7 downto 0); -- Adres odczytu B (slicing 7:5 wewnątrz)
+        
+        addr_w     : in  STD_LOGIC_VECTOR (2 downto 0); -- Adres zapisu (Rd - jako cel)
         
         -- SYGNAŁ STERUJĄCY MUXEM (z Control Unit)
-        rf_src_sel: in  STD_LOGIC_VECTOR (2 downto 0); -- Wybór źródła danych do zapisu
+        rf_src_sel : in  STD_LOGIC_VECTOR (2 downto 0); -- Wybór źródła danych do zapisu
         
         -- DANE WEJŚCIOWE DO MUXA (Write Back Data Sources)
         alu_out    : in  STD_LOGIC_VECTOR (7 downto 0); -- Wynik z ALU (np. ADD, SUB)
@@ -45,9 +47,9 @@ entity RegFile is
         sreg_data  : in  STD_LOGIC_VECTOR (7 downto 0); -- Dane z rejestru flag (rzadkie, ale możliwe)
         
         -- WYJŚCIA
-        data_a    : out STD_LOGIC_VECTOR (7 downto 0); -- Wyjście portu A (do ALU)
-        data_b    : out STD_LOGIC_VECTOR (7 downto 0); -- Wyjście portu B (do ALU / RAM data_w)
-        data_r7x  : out STD_LOGIC_VECTOR (7 downto 0)  -- Sztywne wyjście R7 (X-Pointer do RAM)
+        data_a     : out STD_LOGIC_VECTOR (7 downto 0); -- Wyjście portu A (do ALU)
+        data_b     : out STD_LOGIC_VECTOR (7 downto 0); -- Wyjście portu B (do ALU / RAM data_w)
+        data_r7x   : out STD_LOGIC_VECTOR (7 downto 0)  -- Sztywne wyjście R7 (X-Pointer do RAM)
     );
 end RegFile;
 
@@ -69,11 +71,11 @@ begin
     -- Decyduje, co zapisujemy do rejestru. Sterowany przez rf_src_sel.
     with rf_src_sel select
         write_data_mux <= 
-            alu_out     when "000",  -- Większość operacji arytmetycznych
-            ram_data    when "001",  -- Odczyt z pamięci (LD, POP)
-            rs_imm_in   when "010",  -- Ładowanie stałej (LDI, MOVI)
-            io_data_in  when "011",  -- Odczyt z wejść (IN)
-            sreg_data   when "100",  -- Zapis flag do rejestru (opcjonalne)
+            alu_out      when "000",  -- Większość operacji arytmetycznych
+            ram_data     when "001",  -- Odczyt z pamięci (LD, POP)
+            rs_imm_in    when "010",  -- Ładowanie stałej (LDI, MOVI)
+            io_data_in   when "011",  -- Odczyt z wejść (IN)
+            sreg_data    when "100",  -- Zapis flag do rejestru (opcjonalne)
             (others=>'0') when others; -- Zabezpieczenie
 
     -- =========================================================
@@ -94,9 +96,11 @@ begin
     -- =========================================================
     -- 3. ODCZYT ASYNCHRONICZNY (KOMBINACYJNY)
     -- =========================================================
-    -- Dane są dostępne natychmiast po zmianie adresu (dla ALU).
+    -- Port A: Czyta normalnie z 3-bitowego adresu
     data_a <= registers(to_integer(unsigned(addr_a)));
-    data_b <= registers(to_integer(unsigned(addr_b)));
+    
+    -- Port B: ZMIANA - Pobiera 8-bitowy sygnał i tnie go (Bity 7-5 to adres)
+    data_b <= registers(to_integer(unsigned(addr_b(7 downto 5))));
 
     -- =========================================================
     -- 4. SPECJALNE WYJŚCIE R7 (X-POINTER)
