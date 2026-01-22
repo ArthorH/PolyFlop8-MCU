@@ -1,26 +1,3 @@
--- ============================================================================
--- File:         ProgPROM.vhd
--- Description:  Program ROM for PolyFlop8 Processor
---                This file has been verified with the following test cases:
---                - Fetch from address 0x000 (TC 1.1)
---                - Fetch from address 0x001 (TC 1.2)
---                - Fetch from address 0x002 (TC 1.3)
---                - Fetch from address 0x003 (TC 1.4)
---                - Fetch from address 0x004 (TC 1.5)
---                - Undefined address 0x005 (TC 5.1)
---                - Near max address 0x7FE (TC 5.3)
---                - Max address 0x7FF (TC 6.2)
---                - Asynchronous read verification (TC 2.2)
---                - 100% code coverage of Program ROM behavioral description
---
--- Author:       Robistruction ROBOTICS
--- Date:         \today
--- Version:      1.0
--- Status:       VERIFIED
--- Test Report:  PolyFlop8-MCU\Documentation\Testability\TestReports-UnitTest\TC-PROM-001
--- ============================================================================
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -28,63 +5,81 @@ use IEEE.NUMERIC_STD.ALL;
 entity ProgPROM is
     Port (
         clk      : in  STD_LOGIC;
-        reset    : in  STD_LOGIC;
         address  : in  STD_LOGIC_VECTOR (10 downto 0);
-        data_out : out STD_LOGIC_VECTOR (15 downto 0)
+        data_out : out STD_LOGIC_VECTOR (15 downto 0);
+        enable   : in  STD_LOGIC
     );
 end ProgPROM;
 
 architecture Behavioral of ProgPROM is
-    
-    -- =========================================================
-    -- 1. CONSTANT DEFINITIONS (OPCODES)
-    -- =========================================================
-    -- Adjusted Opcodes based on Test Bench expectations
-    constant OP_ADD : std_logic_vector(4 downto 0) := "00000"; -- 0x00
-    constant OP_SUB : std_logic_vector(4 downto 0) := "00001"; -- 0x01 (Corrected from 0x02)
-    constant OP_MOV : std_logic_vector(4 downto 0) := "01110"; -- 0x0E
-    constant OP_JMP : std_logic_vector(4 downto 0) := "11000"; -- 0x18
-    
-    -- Note: LDI uses a special 4-bit opcode '1000' in the TB expectation
-    -- so we will construct it manually in the array.
+
+    -- =========================================================================
+    -- 1. TWOJE KODY (Te, które potwierdzi?e?)
+    -- =========================================================================
+    constant OP_ADD  : std_logic_vector(4 downto 0) := "00000";
+    constant OP_LDI  : std_logic_vector(4 downto 0) := "01001";
+    constant OP_OUT  : std_logic_vector(4 downto 0) := "11101";
+    constant OP_RJMP : std_logic_vector(4 downto 0) := "01111";
 
     type rom_type is array (0 to 2047) of std_logic_vector(15 downto 0);
 
-    -- =========================================================
-    -- 2. PROGRAM CONTENT (ROM)
-    -- =========================================================
+    -- =========================================================================
+    -- 2. PROGRAM: 3^3 = 27 (Bez p?tli, metoda liniowa)
+    -- =========================================================================
+    -- Algorytm: R2 = 0 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 (Razem 9 razy)
+    
     constant ROM : rom_type := (
-        -- 0x000: LDI R1, 10
-        -- TB Expects: 0x820A -> 1000 (Op) 001 (Rd) 0 (Pad) 00001010 (Imm)
-        0 => "1000" & "001" & '0' & "00001010", 
+        -- 0: LDI R0, 3 (Sta?a do dodawania)
+        0 => OP_LDI & "000" & "00000011", 
+        
+        -- 1: LDI R2, 0 (Wyczy?? wynik)
+        1 => OP_LDI & "010" & "00000000", 
 
-        -- 0x001: LDI R2, 5
-        -- TB Expects: 0x8405 -> 1000 (Op) 010 (Rd) 0 (Pad) 00000101 (Imm)
-        1 => "1000" & "010" & '0' & "00000101", 
+        -- Teraz 9 razy dodajemy R0 do R2:
+        
+        -- 2: ADD R2, R0 (Wynik = 3)
+        2 => OP_ADD & "010" & "000" & "00000", 
+        
+        -- 3: ADD R2, R0 (Wynik = 6)
+        3 => OP_ADD & "010" & "000" & "00000",
+        
+        -- 4: ADD R2, R0 (Wynik = 9)
+        4 => OP_ADD & "010" & "000" & "00000",
+        
+        -- 5: ADD R2, R0 (Wynik = 12)
+        5 => OP_ADD & "010" & "000" & "00000",
+        
+        -- 6: ADD R2, R0 (Wynik = 15)
+        6 => OP_ADD & "010" & "000" & "00000",
+        
+        -- 7: ADD R2, R0 (Wynik = 18)
+        7 => OP_ADD & "010" & "000" & "00000",
+        
+        -- 8: ADD R2, R0 (Wynik = 21)
+        8 => OP_ADD & "010" & "000" & "00000",
+        
+        -- 9: ADD R2, R0 (Wynik = 24)
+        9 => OP_ADD & "010" & "000" & "00000",
+        
+        -- 10: ADD R2, R0 (Wynik = 27) -> SUKCES!
+        10 => OP_ADD & "010" & "000" & "00000",
 
-        -- 0x002: ADD R1, R2
-        -- Expects: 0x0140 -> 00000 (Op) 001 (Rd) 010 (Rs) 00000
-        2 => OP_ADD & "001" & "010" & "00000", 
+        -- 11: OUT R2 (Wystaw 27 na LEDy)
+        11 => OP_OUT & "010" & "00000000", 
+        
+        -- 12: RJMP -1 (Stop - niesko?czona p?tla w miejscu)
+        12 => OP_RJMP & "000" & "11111111",
 
-        -- 0x003: SUB R1, R2
-        -- Expects: 0x0940 -> 00001 (Op) 001 (Rd) 010 (Rs) 00000
-        3 => OP_SUB & "001" & "010" & "00000", 
-
-        -- 0x004: JMP 0x000
-        -- Expects: 0xC000 -> 11000 (Op) 000... (Addr)
-        4 => OP_JMP & "00000000000", 
-
-        -- Default NOP (ADD R0, R0 = 0x0000)
         others => (others => '0')
     );
 
 begin
-
-    -- =========================================================
-    -- 3. MEMORY READ
-    -- =========================================================
-    -- Purely combinatorial read allows asynchronous access
-    -- This satisfies the "Async Read" test case.
-    data_out <= ROM(to_integer(unsigned(address)));
-
+    process(clk)
+    begin
+        if rising_edge(clk) then
+             if enable = '1' then
+                data_out <= ROM(to_integer(unsigned(address)));
+             end if;
+        end if;
+    end process;
 end Behavioral;
